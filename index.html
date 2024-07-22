@@ -47,4 +47,38 @@
         </footer>
    </div>
 </body>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    let icon = document.getElementById("fa-regular-fa-user");
+    let sub = document.getElementById("menu-item-cabinet");
+    let div = document.getElementById("col-md-4");
+
+
+
+    icon.addEventListener("mouseenter", toggleSubMenu);
+    icon.addEventListener("click", toggleSubMenu);
+
+
+    sub.addEventListener("mouseleave", function() {
+        if (window.innerWidth > 100) {
+            hideSubMenu();
+        }
+    });
+
+     div.addEventListener("mouseleave", function() {
+        if (window.innerWidth > 100) {
+            hideSubMenu();
+            console.log("on div");
+        }
+    });
+
+    function toggleSubMenu() {
+        sub.classList.toggle("active");
+    }
+
+    function hideSubMenu() {
+        sub.classList.remove("active");
+    }
+});
+</script>
 </html>
